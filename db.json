@@ -1,0 +1,15 @@
+{
+  "emails": [
+    {
+      "id": "1",
+      "receiver": "John",
+      "subject": "Title",
+      "text": "dfasdfadad",
+      "date": "15:19 03.02.2022"
+    },
+    {
+      "id": "ee7b",
+      "text": "dsdasddasdsadasdas"
+    }
+  ]
+}

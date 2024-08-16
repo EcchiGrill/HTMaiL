@@ -1,0 +1,20 @@
+@mixin input-template {
+  width: 100%;
+  outline: none;
+  color: #000;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(212, 211, 211, 0.945);
+  margin-bottom: 15px;
+  font-size: 17px;
+}
+
+@mixin flex-template($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin line-text-template($align) {
+  width: 100%;
+  text-align: $align;
+}

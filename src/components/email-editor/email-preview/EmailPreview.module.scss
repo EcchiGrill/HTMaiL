@@ -1,0 +1,32 @@
+@import "../../../imports.scss";
+
+.hidden {
+  display: flex;
+  place-content: center;
+}
+
+.hidden_border {
+  border-top: $border;
+  width: 15em;
+}
+
+.hidden_text {
+  @include line-text-template(left);
+  color: #808080;
+  padding: $preview-padding;
+}
+
+.card {
+  width: calc(28em - 44px);
+  height: 70%;
+  border-top: $border;
+  padding: $preview-padding;
+  transition: border ease 400ms;
+
+  > p {
+    margin: 0;
+    color: #000;
+    height: 100%;
+    word-wrap: break-word;
+  }
+}

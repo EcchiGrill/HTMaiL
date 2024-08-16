@@ -1,0 +1,33 @@
+@import "../../imports.scss";
+
+.feed {
+  width: 28em;
+  border-top: $border;
+
+  .letter {
+    @include flex-template(column);
+    color: $black;
+    margin-top: 20px;
+    padding: 15px;
+    border: $border;
+    border-radius: 10px;
+    height: 10em;
+    justify-content: space-between;
+
+    .date {
+      @include line-text-template(right);
+    }
+
+    .receiver {
+      @include line-text-template(left);
+    }
+
+    .subject {
+      @include line-text-template(left);
+    }
+
+    .text {
+      @include line-text-template(left);
+    }
+  }
+}

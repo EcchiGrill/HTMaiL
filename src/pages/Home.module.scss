@@ -1,0 +1,21 @@
+@import "../imports.scss";
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 10em;
+  width: auto;
+  min-height: 10em;
+}
+
+.logo {
+  display: flex;
+  place-content: center;
+  margin-block: 30px 80px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 100px;
+  color: $black;
+}
