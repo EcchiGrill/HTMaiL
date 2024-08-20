@@ -1,9 +1,8 @@
-import { IEmailPreview } from "../../../../types";
 import styles from "./EmailPreview.module.scss";
 import parse from "html-react-parser";
 
 //TODO useEffect text border animation trigger
-function EmailPreview({ text }: IEmailPreview) {
+function EmailPreview({ text }: { text: string }) {
   return (
     <div>
       {!text.length ? (

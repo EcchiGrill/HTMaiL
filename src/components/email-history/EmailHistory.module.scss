@@ -3,6 +3,9 @@
 .feed {
   width: 28em;
   border-top: $border;
+  max-height: 55em;
+  padding: 25px;
+  overflow: auto;
 
   .letter {
     @include flex-template(column);

@@ -1,6 +1,6 @@
 @import "../imports.scss";
 
-.container {
+.wrapper {
   display: flex;
   flex-direction: row;
   gap: 10em;
@@ -12,6 +12,11 @@
   display: flex;
   place-content: center;
   margin-block: 30px 80px;
+}
+
+.loadingLogo {
+  height: 100%;
+  place-content: center;
 }
 
 h1 {

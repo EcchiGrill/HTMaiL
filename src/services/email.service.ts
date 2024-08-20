@@ -9,18 +9,11 @@ class EmailService {
     return data;
   }
 
-  async sendEmail(
-    // id: number,
-    // date: string,
-    // receiver: string,
-    // subject: string,
-    text: string
-  ) {
+  async sendEmail({ date, receiver, subject, text }: IEmail) {
     const { data } = await axios.post(this.URL, {
-      //   id,
-      //   date,
-      //   receiver,
-      //   subject,
+      date,
+      receiver,
+      subject,
       text,
     });
     return data;

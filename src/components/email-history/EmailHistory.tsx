@@ -13,12 +13,14 @@ export function EmailHistory() {
     <div className={styles.feed}>
       {data?.map((email) => {
         return (
-          <div key={email.id} className={styles.letter}>
+          <div key={email.text} className={styles.letter}>
             <div className={styles.date}>
-              {email.id} {email.date}
+              <i>{email.date}</i>
             </div>
             <div className={styles.receiver}>{email.receiver}</div>
-            <div className={styles.subject}>{email.subject}</div>
+            <div className={styles.subject}>
+              <b>{email.subject}</b>
+            </div>
             <p className={styles.text}>{parse(email.text)}</p>
           </div>
         );

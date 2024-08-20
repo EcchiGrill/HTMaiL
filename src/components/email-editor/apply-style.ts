@@ -1,20 +1,46 @@
-export type TStyle = "bold" | "italic" | "underline";
+import { TStyle } from "../../../types";
 
-export const applyStyle = (type: TStyle, selectedText: string) => {
-  let formattedText = selectedText;
+export const applyStyle = (type: TStyle, selectedString: string) => {
+  let styledText = selectedString;
+
+  const trimmedSelected = selectedString.trim();
 
   switch (type) {
     case "bold":
-      formattedText = `<b>${selectedText}</b>`;
+      if (
+        trimmedSelected.startsWith("<b>") &&
+        trimmedSelected.endsWith("</b>")
+      ) {
+        return selectedString.replace("<b>", "").replace("</b>", "");
+      } else {
+        styledText = `<b>${selectedString}</b>`;
+      }
       break;
+
     case "italic":
-      formattedText = `<i>${selectedText}</i>`;
+      if (
+        trimmedSelected.startsWith("<i>") &&
+        trimmedSelected.endsWith("</i>")
+      ) {
+        return selectedString.replace("<i>", "").replace("</i>", "");
+      } else {
+        styledText = `<i>${selectedString}</i>`;
+      }
       break;
+
     case "underline":
-      formattedText = `<u>${selectedText}</u>`;
+      if (
+        trimmedSelected.startsWith("<u>") &&
+        trimmedSelected.endsWith("</u>")
+      ) {
+        return selectedString.replace("<u>", "").replace("</u>", "");
+      } else {
+        styledText = `<u>${selectedString}</u>`;
+      }
       break;
+
     default:
-      formattedText = selectedText;
+      styledText = selectedString;
   }
-  return formattedText;
+  return styledText;
 };

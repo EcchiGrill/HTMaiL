@@ -12,6 +12,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+*::selection {
+  background-color: rgba(139, 0, 139, 0.45);
+}
+
 body {
   margin: 0;
   display: flex;

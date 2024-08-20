@@ -1,11 +1,18 @@
-import parse from "html-react-parser";
-import { applyStyle, TStyle } from "../components/email-editor/apply-style";
+import { applyStyle } from "../components/email-editor/apply-style";
 import { useRef, useState } from "react";
+import { TStyle } from "../../types";
+
+const DATE = new Date().toLocaleDateString();
+const TIME = new Date().toLocaleTimeString([], { timeStyle: "short" });
 
 export const useEditor = () => {
-  const [text, setText] = useState(
-    "Lorem ipsum dolor sit amet, <b>consectetur</b> adipisicing elit. Praesentium repudiandae eligendi sed ratione a nostrum, nulla perspiciatis fugit laborum incidunt!"
-  );
+  const [receiver, setReceiver] = useState("");
+
+  const [subject, setSubject] = useState("");
+
+  const [text, setText] = useState("");
+
+  const timemark = TIME + " " + DATE;
 
   const count = text.length;
 
@@ -28,7 +35,16 @@ export const useEditor = () => {
     setText(fullText);
   };
 
-  console.log(parse(text));
-
-  return { applyTextFormat, text, setText, textRef, count };
+  return {
+    applyTextFormat,
+    timemark,
+    receiver,
+    setReceiver,
+    subject,
+    setSubject,
+    text,
+    setText,
+    textRef,
+    count,
+  };
 };
