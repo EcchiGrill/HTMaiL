@@ -7,26 +7,37 @@
 
 .hidden_border {
   border-top: $border;
-  width: 15em;
+  width: 20em;
+  animation: grow 2.6s ease-in-out infinite;
 }
 
 .hidden_text {
   @include line-text-template(left);
   color: #808080;
-  padding: $preview-padding;
+  padding: $medium-padding;
 }
 
 .card {
   width: calc(28em - 44px);
   height: 70%;
   border-top: $border;
-  padding: $preview-padding;
-  transition: border ease 400ms;
+  padding: $medium-padding;
+  transition: border ease 350ms;
 
   > p {
     margin: 0;
-    color: #000;
+    color: $black;
     height: 100%;
     word-wrap: break-word;
+  }
+}
+
+@keyframes grow {
+  0%,
+  100% {
+    transform: scaleX(1.4);
+  }
+  50% {
+    transform: scaleX(1);
   }
 }

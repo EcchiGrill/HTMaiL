@@ -11,20 +11,23 @@ export function EmailHistory() {
 
   return (
     <div className={styles.feed}>
-      {data?.map((email) => {
-        return (
-          <div key={email.text} className={styles.letter}>
-            <div className={styles.date}>
-              <i>{email.date}</i>
+      <div className={styles.border}></div>
+      <div className={styles.wrapper}>
+        {data?.map((email) => {
+          return (
+            <div key={email.text} className={styles.letter}>
+              <div className={styles.date}>
+                <i>{email.date}</i>
+              </div>
+              <div className={styles.receiver}>{email.receiver}</div>
+              <div className={styles.subject}>
+                <b>{email.subject}</b>
+              </div>
+              <p className={styles.text}>{parse(email.text)}</p>
             </div>
-            <div className={styles.receiver}>{email.receiver}</div>
-            <div className={styles.subject}>
-              <b>{email.subject}</b>
-            </div>
-            <p className={styles.text}>{parse(email.text)}</p>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }

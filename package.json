@@ -1,19 +1,21 @@
 {
   "name": "HTMaiL",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "1.0.0",
   "type": "module",
+  "main": "api/server.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "node api/server.js"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.51.23",
     "axios": "^1.7.4",
     "html-react-parser": "^5.1.12",
-    "json-server": "^1.0.0-beta.1",
+    "json-server": "^0.17.4",
     "lucide-react": "^0.427.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

@@ -1,7 +1,7 @@
 @mixin input-template {
   width: 100%;
   outline: none;
-  color: #000;
+  color: $black;
   background: transparent;
   border: 0;
   border-bottom: 1px solid rgba(212, 211, 211, 0.945);
@@ -17,4 +17,9 @@
 @mixin line-text-template($align) {
   width: 100%;
   text-align: $align;
+}
+
+@mixin btn-hover-template {
+  color: $secondary-color;
+  transition: ease-out 0.4s;
 }

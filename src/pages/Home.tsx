@@ -6,7 +6,6 @@ import styles from "./Home.module.scss";
 function Home() {
   const [isLoading, setLoading] = useState(true);
 
-  //TODO Improve loading animation
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);

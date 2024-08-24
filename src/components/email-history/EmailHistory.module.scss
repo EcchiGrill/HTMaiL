@@ -2,19 +2,26 @@
 
 .feed {
   width: 28em;
-  border-top: $border;
-  max-height: 55em;
-  padding: 25px;
-  overflow: auto;
+
+  .border {
+    width: 100%;
+    border-top: $border;
+  }
+
+  .wrapper {
+    max-height: 55em;
+    padding: 10px;
+    overflow: auto;
+  }
 
   .letter {
     @include flex-template(column);
     color: $black;
     margin-top: 20px;
-    padding: 15px;
+    padding: $medium-padding;
     border: $border;
     border-radius: 10px;
-    height: 10em;
+    height: auto;
     justify-content: space-between;
 
     .date {

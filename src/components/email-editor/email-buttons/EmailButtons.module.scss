@@ -1,0 +1,100 @@
+@import "../../../imports.scss";
+
+.container {
+  display: grid;
+  position: absolute;
+  grid-template-columns: 2.5fr 1fr;
+  width: calc(100% - 44px);
+  background: rgba(205, 205, 205, 0.945);
+  place-content: center;
+  padding: $medium-padding;
+  height: 20px;
+  border-end-end-radius: 10px;
+  border-end-start-radius: 10px;
+  bottom: 0;
+
+  .trash {
+    background: transparent;
+    color: $black;
+    &:hover {
+      color: $secondary-color;
+      transition: ease-out 0.4s;
+    }
+  }
+
+  .options {
+    @include flex-template(row);
+    gap: 15px;
+    place-items: center;
+
+    .tools {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: repeat(4, auto);
+      > .paragraph,
+      button {
+        background: transparent;
+        color: $black;
+        &:hover {
+          @include btn-hover-template;
+        }
+      }
+      .paragraph,
+      .bold,
+      .heading {
+        position: relative;
+        display: flex;
+        place-content: center;
+
+        .panel {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          justify-content: end;
+          background: transparent;
+          height: calc(100% + 80px);
+          min-width: 60px;
+          padding-bottom: 10px;
+          z-index: 1;
+          bottom: 20px;
+
+          button {
+            height: 40px;
+            &:hover {
+              @include btn-hover-template;
+            }
+          }
+        }
+
+        &:hover .panel {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  .send {
+    width: 150px;
+    height: 40px;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: $secondary-color;
+      transform-origin: center right;
+      transform: scaleX(0);
+      transition: transform 0.25s ease-in-out;
+    }
+    &:hover::before {
+      transform-origin: center left;
+      transform: scaleX(1);
+    }
+  }
+}

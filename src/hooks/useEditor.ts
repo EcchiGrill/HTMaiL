@@ -1,6 +1,6 @@
 import { applyStyle } from "../components/email-editor/apply-style";
 import { useRef, useState } from "react";
-import { TStyle } from "../../types";
+import { TStyle } from "../types";
 
 const DATE = new Date().toLocaleDateString();
 const TIME = new Date().toLocaleTimeString([], { timeStyle: "short" });
@@ -18,7 +18,7 @@ export const useEditor = () => {
 
   const textRef = useRef<HTMLTextAreaElement | null>(null);
 
-  const applyTextFormat = (type: TStyle) => {
+  const applyTextStyle = (type: TStyle) => {
     if (!textRef.current) return;
     const startIndex = textRef.current?.selectionStart;
     const endIndex = textRef.current?.selectionEnd;
@@ -26,17 +26,15 @@ export const useEditor = () => {
     const before = text.substring(0, startIndex);
     const after = text.substring(endIndex);
     const selectedText = text.substring(startIndex, endIndex);
-    const formattedText = applyStyle(type, selectedText);
+    const styledText = applyStyle(type, before, after, selectedText);
 
-    if (!selectedText.length) return;
+    if (!selectedText && type !== "enter" && type !== "line") return;
 
-    const fullText = before + formattedText + after;
-
-    setText(fullText);
+    setText(styledText);
   };
 
   return {
-    applyTextFormat,
+    applyTextStyle,
     timemark,
     receiver,
     setReceiver,

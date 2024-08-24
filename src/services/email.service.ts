@@ -1,8 +1,8 @@
 import axios from "axios";
-import { IEmail } from "../../types";
+import { IEmail } from "../types";
 
 class EmailService {
-  private URL = "http://localhost:3000/emails";
+  private URL = "https://htma1l.vercel.app/emails";
 
   async getEmails() {
     const { data } = await axios.get<IEmail[]>(this.URL);

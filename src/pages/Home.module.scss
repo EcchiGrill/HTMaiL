@@ -1,8 +1,7 @@
 @import "../imports.scss";
 
 .wrapper {
-  display: flex;
-  flex-direction: row;
+  @include flex-template(row);
   gap: 10em;
   width: auto;
   min-height: 10em;
@@ -17,10 +16,36 @@
 .loadingLogo {
   height: 100%;
   place-content: center;
+  animation: flip 1.15s infinite;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 100px;
-  color: $black;
+@keyframes flip {
+  50% {
+    transform: rotateX(180deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+input {
+  @include input-template;
+  height: 100%;
+  padding-bottom: 5px;
+}
+
+button {
+  display: flex;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: $black;
+  color: $white;
+  cursor: pointer;
+  place-items: center;
+  place-content: center;
+  border: none;
+  outline: none;
 }
