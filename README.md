@@ -4,7 +4,7 @@ Project providing fast E-mail template service, with a main feature - using HTML
 
 <p align="center">
   <a href="#">
-    <img alt="Shows how Instant compresses schleps" src="/public/screenshot.png">
+    <img alt="/public/screenshot.png" src="/public/screenshot.png">
   </a>
 </p>
 

@@ -49,3 +49,46 @@ button {
   border: none;
   outline: none;
 }
+
+@media (max-width: 1150px) {
+  .wrapper {
+    gap: 5em;
+  }
+}
+
+@media (max-width: 1020px) {
+  .wrapper {
+    flex-direction: column;
+    place-items: center;
+  }
+}
+
+@media (max-width: 800px) {
+  .logo {
+    img {
+      width: 450px;
+    }
+  }
+  .loadingLogo {
+    img {
+      width: 500px;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .wrapper {
+    gap: 2em;
+  }
+
+  .logo {
+    img {
+      width: 350px;
+    }
+  }
+  .loadingLogo {
+    img {
+      width: 320px;
+    }
+  }
+}

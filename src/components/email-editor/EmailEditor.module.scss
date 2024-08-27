@@ -38,3 +38,18 @@
     }
   }
 }
+
+@media (max-width: 550px) {
+  .container {
+    grid-template-columns: 22em;
+  }
+
+  .card {
+    width: 22em;
+    height: 25em;
+
+    .counter {
+      margin-top: -30px;
+    }
+  }
+}

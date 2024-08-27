@@ -4,7 +4,7 @@
   display: grid;
   position: absolute;
   grid-template-columns: 2.5fr 1fr;
-  width: calc(100% - 44px);
+  width: calc(100% - 43px);
   background: rgba(205, 205, 205, 0.945);
   place-content: center;
   padding: $medium-padding;
@@ -51,6 +51,7 @@
           flex-direction: column;
           position: absolute;
           justify-content: end;
+          align-items: center;
           background: transparent;
           height: calc(100% + 80px);
           min-width: 60px;
@@ -95,6 +96,30 @@
     &:hover::before {
       transform-origin: center left;
       transform: scaleX(1);
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    gap: 12px;
+
+    .options {
+      gap: 5px;
+
+      button {
+        width: 35px;
+      }
+
+      svg {
+        position: absolute;
+        height: 30px;
+        width: 25px;
+      }
+    }
+    .send {
+      width: 110px;
+      font-size: 14px;
     }
   }
 }
